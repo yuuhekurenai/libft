@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcelesti <gcelesti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/25 21:05:16 by gcelesti          #+#    #+#             */
-/*   Updated: 2026/05/25 21:05:16 by gcelesti         ###   ########.fr       */
+/*   Created: 2026/05/26 13:00:40 by gcelesti          #+#    #+#             */
+/*   Updated: 2026/05/26 13:00:40 by gcelesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 
-char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char	*ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
-	size_t	j;
 
 	i = 0;
-	while (haystack[i] != '\0' && i < len)
+	while (src[i] != '\0' && i < dstsize)
 	{
-		j = 0;
-		while (haystack[i + j] == needle[j] && needle[j] != '\0' && i + j < len)
-		{
-			j++;
-			if (needle[j] == '\0')
-				return ((char *)&haystack[i]);
-		}
+		dst[i] = src[i];
 		i++;
 	}
-	return (NULL);
+	dst[i] = '\0';
+	return (dst);
 }
