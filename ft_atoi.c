@@ -1,18 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcelesti <gcelesti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/25 15:03:36 by gcelesti          #+#    #+#             */
-/*   Updated: 2026/05/25 15:03:36 by gcelesti         ###   ########.fr       */
+/*   Created: 2026/05/28 14:15:26 by gcelesti          #+#    #+#             */
+/*   Updated: 2026/05/28 14:15:26 by gcelesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+int	ft_atoi(const char *nptr)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (c + 32);
-	return (c);
+	int	sign;
+	int	sum;
+	int	i;
+
+	sign = 1;
+	i = 0;
+	sum = 0;
+
+	while (nptr[i] == ' ' || nptr[i] == '\t' || nptr[i] == '\n')
+	{
+		i++;
+	}
+	if (nptr[i] == '-')
+	{
+		sign *= -1;
+	}
+	while (nptr[i] >= '0' && nptr[i] <= '9')
+	{
+		sum = (sum * 10) + (nptr[i] - '0');
+		i++;
+	}
+	return (sign * sum);
 }
