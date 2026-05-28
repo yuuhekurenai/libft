@@ -2,7 +2,7 @@
 
 <div align="center">
 
-# 📚 libft
+# 📚 Libft
 
 **Recriando a biblioteca padrão do C — do zero.**
 
@@ -59,12 +59,12 @@ O resultado final é uma biblioteca estática `libft.a` que será reutilizada em
 #### Memória
 | Função | Status |
 |---|---|
-| `ft_memset` | 🔄 Em progresso |
-| `ft_bzero` | 🔄 Em progresso |
-| `ft_memcpy` | 🔄 Em progresso |
-| `ft_memmove` | 🔄 Em progresso |
-| `ft_memchr` | 🔄 Em progresso |
-| `ft_memcmp` | 🔄 Em progresso |
+| `ft_memset` | ✅ Concluído |
+| `ft_bzero` | ✅ Concluído |
+| `ft_memcpy` | ✅ Concluído |
+| `ft_memmove` | ✅ Concluído |
+| `ft_memchr` | ✅ Concluído |
+| `ft_memcmp` | ✅ Concluído |
 
 #### Conversão numérica e alocação
 | Função | Status |
