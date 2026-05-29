@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 4.2)
+cmake_minimum_required(VERSION 4.1)
 project(libft C)
 
 set(CMAKE_C_STANDARD 23)
@@ -27,4 +27,7 @@ add_executable(libft ft_isalpha.c
         libft.h
         ft_calloc.c
         ft_strndup.c
+        ft_strndup.c
+        ft_strndup.c
+        ft_strlcat.c
 )

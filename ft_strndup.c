@@ -1,7 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strndup.c                                        :+:      :+:    :+:   */
+/*   ft_strndup.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gcelesti <gcelesti@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2026/05/29 08:09:02 by gcelesti          #+#    #+#             */
+/*   Updated: 2026/05/29 09:57:01 by gcelesti         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strndup.c                                        :+:      :+:    :+:  */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcelesti <gcelesti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -15,16 +27,15 @@
 
 #include "libft.h"
 
-void	*ft_strdup(const char *s)
+char	*ft_strndup(const char *s)
 {
 	void	*ptr;
 	size_t	i;
 
 	i = ft_strlen(s);
-	ptr = (char *)malloc(i + 1);
+	ptr = malloc(i + 1);
 	if (!ptr)
 		return (NULL);
 	ft_memcpy(ptr, s, i);
-
 	return (ptr);
 }
