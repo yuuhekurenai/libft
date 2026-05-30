@@ -27,5 +27,4 @@ add_executable(libft ft_isalpha.c
         libft.h
         ft_calloc.c
         ft_strndup.c
-        main_test.c
 )

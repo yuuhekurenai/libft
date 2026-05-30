@@ -6,7 +6,7 @@
 /*   By: gcelesti <gcelesti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 14:08:27 by gcelesti          #+#    #+#             */
-/*   Updated: 2026/05/28 14:08:27 by gcelesti         ###   ########.fr       */
+/*   Updated: 2026/05/29 09:08:17 by gcelesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_strnstr(const char *haystack, const char *needle,
 
 char	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 
-char	ft_strlcat(char *dst, const char *src, size_t dstsize);
+size_t	ft_strlcat(char *dst, const char *src, size_t size);
 
 void	*ft_memset(void *b, int c, size_t len);
 
