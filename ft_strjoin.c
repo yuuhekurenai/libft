@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gcelesti <gcelesti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/28 14:15:26 by gcelesti          #+#    #+#             */
-/*   Updated: 2026/05/28 14:15:26 by gcelesti         ###   ########.fr       */
+/*   Created: 2026/05/30 16:41:56 by gcelesti          #+#    #+#             */
+/*   Updated: 2026/05/30 16:41:56 by gcelesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_atoi(const char *nptr)
+#include <stdlib.h>
+#include "libft.h"
+
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	int	sign;
-	long long	sum;
-	int	i;
+	char	*result;
+	size_t	len1;
+	size_t	len2;
 
-	sign = 1;
-	i = 0;
-	sum = 0;
+	len1 = ft_strlen(s1);
+	len2 = ft_strlen(s2);
+	result = (char *)malloc((len1 + len2 + 1) * sizeof(char));
+	if (!result)
+		return (NULL);
 
-	while (nptr[i] == ' ' || nptr[i] == '\t' || nptr[i] == '\n')
-	{
-		i++;
-	}
-	if (nptr[i] == '-')
-	{
-		sign *= -1;
-	}
-	while (nptr[i] >= '0' && nptr[i] <= '9')
-	{
-		sum = (sum * 10) + (nptr[i] - '0');
-		i++;
-	}
-	return (sign * sum);
+	ft_strlcpy(result, s1, len1 + 1);
+	ft_strlcat(result, s2, len2 + 1);
+	return (result);
 }

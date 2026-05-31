@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stddef.h>
+
 char	*ft_strrchr(char *s, int c)
 {
 	int	i;
@@ -23,4 +25,5 @@ char	*ft_strrchr(char *s, int c)
 
 	if (i >= 0)
 		return (&s[i]);
+	return (NULL);
 }

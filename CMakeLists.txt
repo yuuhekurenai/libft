@@ -26,5 +26,7 @@ add_executable(libft ft_isalpha.c
         ft_atoi.c
         libft.h
         ft_calloc.c
-        ft_strndup.c
+        ft_strdup.c
+        ft_substr.c
+        ft_strjoin.c
 )
