@@ -29,4 +29,5 @@ add_executable(libft ft_isalpha.c
         ft_strdup.c
         ft_substr.c
         ft_strjoin.c
+        ft_strtrim.c
 )
