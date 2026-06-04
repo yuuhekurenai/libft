@@ -79,13 +79,13 @@ The final result is a static library `libft.a` that will be reused across all fu
 
 | Function | Status |
 |---|---|
-| `ft_substr` | ⏳ Pending |
-| `ft_strjoin` | ⏳ Pending |
-| `ft_strtrim` | ⏳ Pending |
-| `ft_split` | ⏳ Pending |
-| `ft_itoa` | ⏳ Pending |
-| `ft_strmapi` | ⏳ Pending |
-| `ft_striteri` | ⏳ Pending |
+| `ft_substr` | ✅ Done |
+| `ft_strjoin` | ✅ Done |
+| `ft_strtrim` | ✅ Done |
+| `ft_split` | ✅ Done |
+| `ft_itoa` | ✅ Done |
+| `ft_strmapi` | ✅ Done |
+| `ft_striteri` | ✅ Done |
 | `ft_putchar_fd` | ⏳ Pending |
 | `ft_putstr_fd` | ⏳ Pending |
 | `ft_putendl_fd` | ⏳ Pending |
