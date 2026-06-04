@@ -33,4 +33,6 @@ add_executable(libft ft_isalpha.c
         ft_split.c
         Teste.c
         Teste.c
+        ft_itoa.c
+        ft_itoa.c
 )
