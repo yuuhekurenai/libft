@@ -86,10 +86,10 @@ The final result is a static library `libft.a` that will be reused across all fu
 | `ft_itoa` | ✅ Done |
 | `ft_strmapi` | ✅ Done |
 | `ft_striteri` | ✅ Done |
-| `ft_putchar_fd` | ⏳ Pending |
-| `ft_putstr_fd` | ⏳ Pending |
-| `ft_putendl_fd` | ⏳ Pending |
-| `ft_putnbr_fd` | ⏳ Pending |
+| `ft_putchar_fd` | ✅ Done |
+| `ft_putstr_fd` | ✅ Done |
+| `ft_putendl_fd` | ✅ Done |
+| `ft_putnbr_fd` | ✅ Done |
 
 ---
 
