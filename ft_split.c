@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 static size_t	count_words(const char *s, char c)
@@ -41,42 +40,46 @@ static void	free_split(char **str, size_t i)
 	free(str);
 }
 
+static int	next_word(const char *s, char c, size_t *i, char **out)
+{
+	size_t	start;
+
+	while (s[*i] == c)
+		(*i)++;
+	start = *i;
+	while (s[*i] && s[*i] != c)
+		(*i)++;
+	if (*i > start)
+	{
+		*out = ft_substr(s, start, *i - start);
+		if (!*out)
+			return (0);
+		return (1);
+	}
+	return (2);
+}
+
 char	**ft_split(char const *s, char c)
 {
 	char	**str;
 	size_t	i;
 	size_t	j;
-	size_t	start;
+	int		status;
 
 	if (!s)
 		return (NULL);
-
 	str = malloc(sizeof(char *) * (count_words(s, c) + 1));
 	if (!str)
 		return (NULL);
-
 	i = 0;
 	j = 0;
 	while (s[i])
 	{
-		while (s[i] && s[i] == c)
-			i++;
-
-		start = i;
-
-		while (s[i] && s[i] != c)
-			i++;
-
-		if (i > start)
-		{
-			str[j] = ft_substr(s, start, i - start);
-			if (!str[j])
-			{
-				free_split(str, j);
-				return (NULL);
-			}
+		status = next_word(s, c, &i, &str[j]);
+		if (status == 1)
 			j++;
-		}
+		else if (status == 0)
+			return (free_split(str, j), NULL);
 	}
 	str[j] = NULL;
 	return (str);

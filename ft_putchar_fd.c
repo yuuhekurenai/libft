@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gcelesti <gcelesti@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gcelesti <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/05/25 15:03:36 by gcelesti          #+#    #+#             */
-/*   Updated: 2026/05/25 15:03:36 by gcelesti         ###   ########.fr       */
+/*   Created: 2026/06/05 06:28:39 by gcelesti          #+#    #+#             */
+/*   Updated: 2026/06/05 06:33:20 by gcelesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_tolower(int c)
+#include "libft.h"
+
+void	ft_putchar_fd(char c, int fd)
 {
-	if (c >= 'A' && c <= 'Z')
-		return (c + 32);
-	return (c);
+	write(fd, &c, 1);
 }

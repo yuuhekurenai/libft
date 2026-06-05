@@ -6,13 +6,13 @@
 /*   By: gcelesti <gcelesti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/26 13:00:40 by gcelesti          #+#    #+#             */
-/*   Updated: 2026/05/26 13:00:40 by gcelesti         ###   ########.fr       */
+/*   Updated: 2026/06/05 10:22:40 by gcelesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-char	*ft_strlcpy(char *dst, const char *src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	i;
 
@@ -23,5 +23,5 @@ char	*ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		i++;
 	}
 	dst[i] = '\0';
-	return (dst);
+	return (ft_strlen(src));
 }

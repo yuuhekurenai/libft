@@ -6,16 +6,16 @@
 /*   By: gcelesti <gcelesti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 21:37:07 by gcelesti          #+#    #+#             */
-/*   Updated: 2026/05/27 21:37:07 by gcelesti         ###   ########.fr       */
+/*   Updated: 2026/06/05 07:18:23 by gcelesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memchr(const void *s, int c, size_t len)
 {
 	const unsigned char	*ptr;
-	size_t	i;
+	size_t				i;
 
 	ptr = (unsigned char *)s;
 	i = 0;
