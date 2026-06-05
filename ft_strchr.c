@@ -6,13 +6,13 @@
 /*   By: gcelesti <gcelesti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 15:52:11 by gcelesti          #+#    #+#             */
-/*   Updated: 2026/06/05 09:27:17 by gcelesti         ###   ########.fr       */
+/*   Updated: 2026/06/05 10:18:06 by gcelesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
-char	*ft_strchr(char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
 	int	i;
 
@@ -20,10 +20,10 @@ char	*ft_strchr(char *s, int c)
 	while (s[i] != '\0')
 	{
 		if (s[i] == (char)c)
-			return (&s[i]);
+			return ((char *)&s[i]);
 		i++;
 	}
 	if (s[i] == (char)c)
-		return (&s[i]);
+		return ((char *)&s[i]);
 	return (NULL);
 }

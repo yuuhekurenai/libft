@@ -6,13 +6,13 @@
 /*   By: gcelesti <gcelesti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 15:10:55 by gcelesti          #+#    #+#             */
-/*   Updated: 2026/05/25 15:10:55 by gcelesti         ###   ########.fr       */
+/*   Updated: 2026/06/05 10:13:38 by gcelesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *str)
 {
 	int	i;
 
