@@ -6,7 +6,7 @@
 /*   By: gcelesti <gcelesti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 13:59:47 by gcelesti          #+#    #+#             */
-/*   Updated: 2026/05/25 13:59:47 by gcelesti         ###   ########.fr       */
+/*   Updated: 2026/06/05 09:32:12 by gcelesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,3 @@ int	ft_toupper(int c)
 		return (c - 32);
 	return (c);
 }
-//
-// int main() {
-// 	int c;
-//
-// 	c = 'g';
-// 	printf("%c\n", ft_toupper(c));
-// 	return (0);
-//
-// }

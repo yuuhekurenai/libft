@@ -6,7 +6,7 @@
 /*   By: gcelesti <gcelesti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/25 16:06:19 by gcelesti          #+#    #+#             */
-/*   Updated: 2026/05/25 16:06:19 by gcelesti         ###   ########.fr       */
+/*   Updated: 2026/06/05 09:30:54 by gcelesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,8 @@ char	*ft_strrchr(char *s, int c)
 	i = 0;
 	while (s[i] != '\0')
 		i++;
-
 	while (i > 0 && s[i] != (char)c)
 		i = i - 1;
-
 	if (i >= 0)
 		return (&s[i]);
 	return (NULL);

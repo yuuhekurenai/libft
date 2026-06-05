@@ -6,7 +6,7 @@
 /*   By: gcelesti <gcelesti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/27 13:35:22 by gcelesti          #+#    #+#             */
-/*   Updated: 2026/05/27 13:35:22 by gcelesti         ###   ########.fr       */
+/*   Updated: 2026/06/05 07:19:14 by gcelesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	*ft_memset(void *b, int c, size_t len)
 {
 	unsigned char	*ptr;
-	size_t	i;
+	size_t			i;
 
 	ptr = (unsigned char *)b;
 	while (i < len)

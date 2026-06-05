@@ -6,7 +6,7 @@
 /*   By: gcelesti <gcelesti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 19:47:07 by gcelesti          #+#    #+#             */
-/*   Updated: 2026/06/04 19:47:07 by gcelesti         ###   ########.fr       */
+/*   Updated: 2026/06/05 09:27:54 by gcelesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 
 	if (!s || !f)
 		return ;
-
 	i = 0;
 	while (s[i])
 	{

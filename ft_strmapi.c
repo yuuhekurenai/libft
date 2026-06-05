@@ -6,7 +6,7 @@
 /*   By: gcelesti <gcelesti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/04 15:55:06 by gcelesti          #+#    #+#             */
-/*   Updated: 2026/06/04 15:55:06 by gcelesti         ###   ########.fr       */
+/*   Updated: 2026/06/05 09:29:58 by gcelesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (!s || !f)
 		return (NULL);
-
 	str = (char *)malloc(ft_strlen(s) + 1);
 	if (!str)
 		return (NULL);
-
 	i = 0;
 	while (s[i])
 	{

@@ -6,7 +6,7 @@
 /*   By: gcelesti <gcelesti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/28 14:08:27 by gcelesti          #+#    #+#             */
-/*   Updated: 2026/05/29 09:08:17 by gcelesti         ###   ########.fr       */
+/*   Updated: 2026/06/05 09:36:54 by gcelesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ int		ft_isdigit(int c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
-
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 
@@ -60,5 +59,23 @@ int		ft_atoi(const char *nptr);
 
 void	*ft_calloc(size_t nmemb, size_t size);
 
+void    ft_putchar_fd(char c, int fd);
 
+void	ft_putendl_fd(char *s, int fd);
+
+void	ft_putstr_fd(char *s, int fd);
+
+void	ft_putchar_fd(char c, int fd);
+
+char	**ft_split(char const *s, char c);
+
+char	*ft_itoa(int n);
+
+void	ft_striteri(char *s, void (*f)(unsigned int, char *));
+
+char	*ft_strjoin(char const *s1, char const *s2);
+
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+char	*ft_strtrim(char const *s1, char const *set);
 #endif

@@ -6,7 +6,7 @@
 /*   By: gcelesti <gcelesti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/03 21:02:14 by gcelesti          #+#    #+#             */
-/*   Updated: 2026/06/03 21:02:14 by gcelesti         ###   ########.fr       */
+/*   Updated: 2026/06/05 07:18:00 by gcelesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,28 +34,21 @@ char	*ft_itoa(int n)
 	nb = n;
 	if (nb < 0)
 		nb = -nb;
-
 	len = count_digits(nb);
 	if (n < 0)
 		len++;
-
 	str = malloc(len + 1);
 	if (!str)
 		return (NULL);
-
 	str[len] = '\0';
-
 	while (len > 0 && nb > 0)
 	{
 		str[--len] = (nb % 10) + '0';
 		nb /= 10;
 	}
-
 	if (n == 0)
 		str[0] = '0';
-
 	if (n < 0)
 		str[0] = '-';
-
 	return (str);
 }

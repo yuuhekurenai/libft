@@ -22,23 +22,17 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (!s1 || !set)
 		return (NULL);
-
 	start = 0;
 	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;
-
 	end = ft_strlen(s1);
 	while (end > start && ft_strchr(set, s1[end - 1]))
 		end--;
-
 	len = end - start;
-
 	str = (char *)malloc(len + 1);
 	if (!str)
 		return (NULL);
-
 	ft_memcpy(str, s1 + start, len);
 	str[len] = '\0';
-
 	return (str);
 }
