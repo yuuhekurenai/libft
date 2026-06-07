@@ -97,10 +97,10 @@ The final result is a static library `libft.a` that will be reused across all fu
 
 | Function | Status |
 |---|---|
-| `ft_lstnew` | ⏳ Pending |
-| `ft_lstadd_front` | ⏳ Pending |
+| `ft_lstnew` | ✅ Done |
+| `ft_lstadd_front` | ✅ Done |
 | `ft_lstadd_back` | ⏳ Pending |
-| `ft_lstsize` | ⏳ Pending |
+| `ft_lstsize` | ✅ Done |
 | `ft_lstlast` | ⏳ Pending |
 | `ft_lstdelone` | ⏳ Pending |
 | `ft_lstclear` | ⏳ Pending |
