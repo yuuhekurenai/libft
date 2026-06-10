@@ -9,6 +9,7 @@
 /*   Updated: 2026/05/29 09:09:47 by gcelesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
 #include <stddef.h>
 
@@ -29,5 +30,5 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		i++;
 	}
 	dst[dest_len + i] = '\0';
-	return (i + dest_len);
+	return (src_len + dest_len);
 }

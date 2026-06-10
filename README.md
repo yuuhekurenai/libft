@@ -103,9 +103,9 @@ The final result is a static library `libft.a` that will be reused across all fu
 | `ft_lstsize` | ✅ Done |
 | `ft_lstlast` | ✅ Done |
 | `ft_lstdelone` | ✅ Done |
-| `ft_lstclear` | ⏳ Pending |
-| `ft_lstiter` | ⏳ Pending |
-| `ft_lstmap` | ⏳ Pending |
+| `ft_lstclear` | ✅ Done |
+| `ft_lstiter` | ✅ Done |
+| `ft_lstmap` | ✅ Done |
 
 ---
 

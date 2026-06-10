@@ -12,75 +12,73 @@
 
 #include "libft.h"
 
-static size_t	count_words(const char *s, char c)
+static int	count_words(char const *s, char c)
 {
-	size_t	count;
-	int		in_word;
+	int	i;
+	int	count;
 
+	i = 0;
 	count = 0;
-	in_word = 0;
-	while (*s)
+	while (s[i])
 	{
-		if (*s != c && !in_word)
+		while (s[i] && s[i] == c)
+			i++;
+		if (s[i] && s[i] != c)
 		{
-			in_word = 1;
 			count++;
+			while (s[i] && s[i] != c)
+				i++;
 		}
-		else if (*s == c)
-			in_word = 0;
-		s++;
 	}
 	return (count);
 }
 
-static void	free_split(char **str, size_t i)
+static char	*get_word(char const *s, char c, int *pos)
 {
-	while (i > 0)
-		free(str[--i]);
-	free(str);
-}
+	int		start;
+	int		len;
+	char	*word;
 
-static int	next_word(const char *s, char c, size_t *i, char **out)
-{
-	size_t	start;
-
-	while (s[*i] == c)
-		(*i)++;
-	start = *i;
-	while (s[*i] && s[*i] != c)
-		(*i)++;
-	if (*i > start)
-	{
-		*out = ft_substr(s, start, *i - start);
-		if (!*out)
-			return (0);
-		return (1);
-	}
-	return (2);
+	while (s[*pos] && s[*pos] == c)
+		(*pos)++;
+	start = *pos;
+	while (s[*pos] && s[*pos] != c)
+		(*pos)++;
+	len = *pos - start;
+	word = malloc(len + 1);
+	if (!word)
+		return (NULL);
+	ft_strlcpy(word, s + start, len + 1);
+	return (word);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**str;
-	size_t	i;
-	size_t	j;
-	int		status;
+	char	**result;
+	int		words;
+	int		i;
+	int		pos;
 
 	if (!s)
 		return (NULL);
-	str = malloc(sizeof(char *) * (count_words(s, c) + 1));
-	if (!str)
+	words = count_words(s, c);
+	result = malloc((words + 1) * sizeof(char *));
+	if (!result)
 		return (NULL);
 	i = 0;
-	j = 0;
-	while (s[i])
+	pos = 0;
+	while (i < words)
 	{
-		status = next_word(s, c, &i, &str[j]);
-		if (status == 1)
-			j++;
-		else if (status == 0)
-			return (free_split(str, j), NULL);
+		result[i] = get_word(s, c, &pos);
+		if (!result[i])
+		{
+			while (i-- > 0)
+				free(result[i]);
+			free(result);
+			return (NULL);
+		}
+		i++;
 	}
-	str[j] = NULL;
-	return (str);
+	result[i] = NULL;
+	return (result);
 }
