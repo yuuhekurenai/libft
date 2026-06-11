@@ -6,7 +6,7 @@
 /*   By: gcelesti <gcelesti@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/06/02 20:20:36 by gcelesti          #+#    #+#             */
-/*   Updated: 2026/06/02 20:20:36 by gcelesti         ###   ########.fr       */
+/*   Updated: 2026/06/11 00:00:00 by gcelesti         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	count_words(char const *s, char c)
 	{
 		while (s[i] && s[i] == c)
 			i++;
-		if (s[i] && s[i] != c)
+		if (s[i])
 		{
 			count++;
 			while (s[i] && s[i] != c)
@@ -45,11 +45,19 @@ static char	*get_word(char const *s, char c, int *pos)
 	while (s[*pos] && s[*pos] != c)
 		(*pos)++;
 	len = *pos - start;
-	word = malloc(len + 1);
+	word = malloc(sizeof(char) * (len + 1));
 	if (!word)
 		return (NULL);
 	ft_strlcpy(word, s + start, len + 1);
 	return (word);
+}
+
+static void	*free_result(char **result, int size)
+{
+	while (size-- > 0)
+		free(result[size]);
+	free(result);
+	return (NULL);
 }
 
 char	**ft_split(char const *s, char c)
@@ -62,7 +70,7 @@ char	**ft_split(char const *s, char c)
 	if (!s)
 		return (NULL);
 	words = count_words(s, c);
-	result = malloc((words + 1) * sizeof(char *));
+	result = malloc(sizeof(char *) * (words + 1));
 	if (!result)
 		return (NULL);
 	i = 0;
@@ -71,12 +79,7 @@ char	**ft_split(char const *s, char c)
 	{
 		result[i] = get_word(s, c, &pos);
 		if (!result[i])
-		{
-			while (i-- > 0)
-				free(result[i]);
-			free(result);
-			return (NULL);
-		}
+			return (free_result(result, i));
 		i++;
 	}
 	result[i] = NULL;
