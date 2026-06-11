@@ -12,22 +12,50 @@
 
 #include "libft.h"
 
+static void	*free_lst(t_list **lst, void (*del)(void *))
+{
+	t_list	*tmp;
+
+	while (*lst)
+	{
+		tmp = (*lst)->next;
+		del((*lst)->content);
+		free(*lst);
+		*lst = tmp;
+	}
+	return (NULL);
+}
+
+static t_list	*new_node(void *content)
+{
+	t_list	*node;
+
+	node = malloc(sizeof(t_list));
+	if (!node)
+		return (NULL);
+	node->content = content;
+	node->next = NULL;
+	return (node);
+}
+
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	t_list	*new_lst;
-	t_list	*elem;
+	t_list	*last;
+	t_list	*node;
 
-	if (!lst)
-		return (0);
-	new_lst = 0;
+	new_lst = NULL;
+	last = NULL;
 	while (lst)
 	{
-		if (!(elem = ft_lstnew(f(lst->content))))
-		{
-			ft_lstclear(&new_lst, del);
-			return (0);
-		}
-		ft_lstadd_back(&new_lst, elem);
+		node = new_node(f(lst->content));
+		if (!node)
+			return (free_lst(&new_lst, del));
+		if (!new_lst)
+			new_lst = node;
+		else
+			last->next = node;
+		last = node;
 		lst = lst->next;
 	}
 	return (new_lst);
