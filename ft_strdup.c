@@ -22,11 +22,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
-#include <stdlib.h>
-
-#include "libft.h"
-
 #include "libft.h"
 
 char	*ft_strdup(const char *s)
