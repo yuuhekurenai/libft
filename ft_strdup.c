@@ -27,15 +27,24 @@
 
 #include "libft.h"
 
+#include "libft.h"
+
 char	*ft_strdup(const char *s)
 {
-	void	*ptr;
-	size_t	i;
+	int		i;
+	char	*dst;
 
-	i = ft_strlen(s);
-	ptr = malloc(i + 1);
-	if (!ptr)
+	dst = malloc(sizeof(char) * (ft_strlen((char *)s) + 1));
+	if (!(dst))
+	{
 		return (NULL);
-	ft_memcpy(ptr, s, i);
-	return (ptr);
+	}
+	i = 0;
+	while (s[i])
+	{
+		dst[i] = s[i];
+		i++;
+	}
+	dst[i] = '\0';
+	return (dst);
 }
