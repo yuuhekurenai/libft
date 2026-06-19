@@ -99,7 +99,7 @@ The final result is a static library `libft.a` that will be reused across all fu
 |---|---|
 | `ft_lstnew` | ✅ Done |
 | `ft_lstadd_front` | ✅ Done |
-| `ft_lstadd_back` | ⏳ Pending |
+| `ft_lstadd_back` | ✅ Done  |
 | `ft_lstsize` | ✅ Done |
 | `ft_lstlast` | ✅ Done |
 | `ft_lstdelone` | ✅ Done |
@@ -109,7 +109,7 @@ The final result is a static library `libft.a` that will be reused across all fu
 
 ---
 
-**Legend:** ✅ Done · 🔄 In progress · ⏳ Pending
+**Legend:** ✅ Done · ✅ Finish · ✅ Done
 
 ---
 
